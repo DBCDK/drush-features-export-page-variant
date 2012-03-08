@@ -1,4 +1,3 @@
-<base href="/Users/arne/usr/src/drush-features-export-page-variant/">
 # Drush features export page variant #
 
 This is a drush plugin for experienced Drupal developers.
@@ -45,11 +44,11 @@ or using the much shorter command alias, fepv:
 
 You can either locate the page handler name in the URL:
 
-![Find page_handler name from URL](demo1.png)
+![Find page_handler name from URL](https://github.com/DBCDK/drush-features-export-page-variant/raw/master/demo1.png)
 
 or from the export tab of the variant - look for `$handler->name`:
 
-![Find page_handler name from URL](demo2.png)
+![Find page_handler name from URL](https://github.com/DBCDK/drush-features-export-page-variant/raw/master/demo2.png)
 
 ## Caveats ##
 
