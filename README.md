@@ -52,45 +52,45 @@ or from the export tab of the variant - look for `$handler->name`:
 
 ## Caveats ##
 
-* The plugin will try to add a dependency on the feature that the
-  "original" page is located in. But it does this by guessing!
+*   The plugin will try to add a dependency on the feature that the
+    "original" page is located in. But it does this by guessing!
   
-  If the variant you want to export is named `my_page_handler_2` it
-  will make a guess and decide that the original must be
-  `my_page_handler` and add a dependency on the feature where that is
-  located.
+    If the variant you want to export is named `my_page_handler_2` it
+    will make a guess and decide that the original must be
+    `my_page_handler` and add a dependency on the feature where that
+    is located.
   
-* If you are more than one developer adding variants at the same time
-  you might end up with more than one instance of a handler named
-  `my_page_handler_2`.
+*   If you are more than one developer adding variants at the same
+    time you might end up with more than one instance of a handler
+    named `my_page_handler_2`.
   
-  Be careful. Talk to each other and make sure your code is up-to-date
-  and do a thorough review of the code before pushing to a common
-  repository.
+    Be careful. Talk to each other and make sure your code is
+    up-to-date and do a thorough review of the code before pushing to
+    a common repository.
   
-  If your end up with several page handlers with the same name you can
-  edit the feature and renamed the page handler name manually. The
-  name should occur one time in `my-feature.info` and two times in
-  `my-feature.pages_default.inc`.
+    If your end up with several page handlers with the same name you
+    can edit the feature and renamed the page handler name manually.
+    The name should occur one time in `my-feature.info` and two times
+    in `my-feature.pages_default.inc`.
 
-* Trying to add a non-existing page variant will not produce any error
-  messages or warnings.
+*   Trying to add a non-existing page variant will not produce any
+    error messages or warnings.
   
-  Even worse it will leave your feature in an inconsistent state.
-  `drush feature-update my-feature` will probably bring it in to a
-  consistent state again.
+    Even worse it will leave your feature in an inconsistent state.
+    `drush feature-update my-feature` will probably bring it in to a
+    consistent state again.
 
-* Adding a page variant that is already handled by another feature
-  will not produce any error messages or warnings.
+*   Adding a page variant that is already handled by another feature
+    will not produce any error messages or warnings.
   
-  Even worse it will leave your features/site in an inconsistent
-  state.
+    Even worse it will leave your features/site in an inconsistent
+    state.
 
-* You cannot remove a page variant from a feature again. At least not
-  from the administrative interface or from drush.
+*   You cannot remove a page variant from a feature again. At least
+    not from the administrative interface or from drush.
   
-  You will have to edit the feature module (as in change the source
-  code) yourself to remove the page variant.
+    You will have to edit the feature module (as in change the source
+    code) yourself to remove the page variant.
 
 ## The "real" solution ##
 
