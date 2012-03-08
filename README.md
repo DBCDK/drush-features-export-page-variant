@@ -60,6 +60,19 @@ or from the export tab of the variant - look for `$handler->name`:
   `my_page_handler` and add a dependency on the feature where that is
   located.
   
+* If you are more than one developer adding variants at the same time
+  you might end up with more than one instance of a handler named
+  `my_page_handler_2`.
+  
+  Be careful. Talk to each other and make sure your code is up-to-date
+  and do a thorough review of the code before pushing to a common
+  repository.
+  
+  If your end up with several page handlers with the same name you can
+  edit the feature and renamed the page handler name manually. The
+  name should occur one time in `my-feature.info` and two times in
+  `my-feature.pages_default.inc`.
+
 * Trying to add a non-existing page variant will not produce any error
   messages or warnings.
   
