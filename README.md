@@ -11,6 +11,8 @@ while a better solution is incorporated to features and/or ctools.
 Be sure to read the "Caveats" section below. And remember to have
 backups and/or version control in place.
 
+The plugin has been tested to work with both drush 4.5 and drush 5.x.
+
 ## Use case ##
 
 You have a panel page that is either defined in a feature (with the
@@ -91,6 +93,12 @@ or from the export tab of the variant - look for `$handler->name`:
   
     You will have to edit the feature module (as in change the source
     code) yourself to remove the page variant.
+	
+*   The feature you want to add the variant to must exist and must be
+    recognizable as a feature. This means the feature module must have
+    a `my_feature.features.inc` file. Creating a new feature from the
+    UI and _not_ adding anything to the feature will _not_ add a
+    `my_feature.features.inc` and will hence _not_ be recognized.
 
 ## The "real" solution ##
 

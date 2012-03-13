@@ -69,7 +69,13 @@ function drush_features_export_page_variant($module_name) {
     return drush_set_error('PEPV_ERROR', dt('No page variants to add to @feature.', array('@feature' => $module_name)));
   }
 
-  _features_resolve_dependencies($data, $export, $module_name, 'page_manager_handlers');
+  // _features_resolve_dependencies() was added in features-7.x-1.0-beta5.
+  // _features_resolve_dependencies() iterates over data and convert to
+  // dependencies if already defined elsewhere. It is a nice-to-have but not
+  // strictly necessary.
+  if (function_exists('_features_resolve_dependencies')) {
+    _features_resolve_dependencies($data, $export, $module_name, 'page_manager_handlers');
+  }
 
   $export['dependencies'] = _features_export_minimize_dependencies($export['dependencies'], $module_name);
   $export['dependencies'] = array_merge($export['dependencies'], drupal_map_assoc($feature->info['dependencies']));
