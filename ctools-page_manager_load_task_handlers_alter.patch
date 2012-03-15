@@ -1,0 +1,14 @@
+diff --git a/page_manager/page_manager.module b/page_manager/page_manager.module
+index 7b606af..4200315 100644
+--- a/page_manager/page_manager.module
++++ b/page_manager/page_manager.module
+@@ -530,6 +530,9 @@ function page_manager_load_task_handlers($task, $subtask_id = NULL, $default_han
+     }
+   }
+ 
++  // Let other modules alter the handlers.
++  drupal_alter('page_manager_load_task_handlers', $handlers, $task, $subtask_id);
++
+   return $handlers;
+ }
+ 
