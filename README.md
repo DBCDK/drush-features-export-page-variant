@@ -162,7 +162,12 @@ hook_alter() to your feature module:
 The other problem is that the page handler itself will not always be
 exported if it is a copy of an existing variant. In these cases you
 will have to copy'n'paste the handler from the export tab in the UI
-and paste it into the feature module yourself.
+and paste it into the feature module yourself *OR* you can do a
+"reorder variants" (you don't have to actually change the order just
+"update and save" the existing order). This will mark the page as
+overridden and make it possible to copy the page variant. After a
+successful copy/export you can revert the page to remove the
+overridden state.
 
 ## The "real" solution ##
 
